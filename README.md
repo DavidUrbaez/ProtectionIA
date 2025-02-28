@@ -9,7 +9,7 @@
 <!--#
 Ingresar nombres integrantes
 -->
-* .
+* Angela Sofia Rosas Garces
 * .
 
 ## Introducción
@@ -125,7 +125,7 @@ Las caracteristicas de las fallas a considerar son:
 
 Una de las variables que dificulta la coordinación de protecciones es la variabilidad en la carga. Estas variaciones son prácticamente de naturaleza aleatoria, aunque se encuentran estimadas por los planeadores de red en cada país. (Notar que acá hay un tema amplio de investigación en analítica predictiva que es la estimación de la futura Demanda de energía eléctrica).
 
-Para el analísis a realizar en este trabajo, se asume que ya se cuenta con la predicción de demanda, y se utilizan dichos valores como entradas para el estudio. Para la creación del dataset se considera un total de 17 escenarios de operación de la red. Notar que este es un número muy amplio de escenarios que humanamente no es posible analizar de forma manual. Para tener de referencia, en Colombia se pide normalmente el análisis en tan solo tres escenarios de despacho, bajo-medio-alto consumo de energía.
+Para el análisis a realizar en este trabajo, se asume que ya se cuenta con la predicción de demanda, y se utilizan dichos valores como entradas para el estudio. Para la creación del dataset se considera un total de 17 escenarios de operación de la red. Notar que este es un número muy amplio de escenarios que humanamente no es posible analizar de forma manual. Para tener de referencia, en Colombia se pide normalmente el análisis en tan solo tres escenarios de despacho, bajo-medio-alto consumo de energía.
 
 El análisis teórico de como se impacta el voltaje, la corriente, y la impedancia medidas por un relé se presenta en [1], si bien es posible hacer estos cálculos a mano, el tiempo requerido sería muy alto, es por ello que recurrimos al uso de herramientas como simuladores eléctricos para resolver las ecuaciones diferenciales asociadas a la red y entregar el comportamiento fidedigno de la red real con su gemelo digital.
 
