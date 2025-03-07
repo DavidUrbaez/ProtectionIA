@@ -6,11 +6,9 @@
 
 * David Urbaez León.
 * Juan Pablo Botero Sepúlveda.
-<!--#
-Ingresar nombres integrantes
--->
-* Angela Sofia Rosas Garces
-* .
+* Angela Sofia Rosas Garces.
+* Andres Osorio Santamaría.
+* Manuela Granda Muñoz.
 
 ## Introducción
 
