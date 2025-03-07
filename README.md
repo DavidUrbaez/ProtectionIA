@@ -346,7 +346,18 @@ Adicionalmente, la variable "Dispatch_scenario" podría ser considerada en los m
 
 Aún así no es algo imposible, y se puede pensar en problemas de ingenería de telecomunicaciones para utilizar los canales existentes utilizados para las teleprotecciones, para usar información similar a los disparos directos teletransferidos, "Permissive Overreaching Transfer Trip (POTT)", "Permissive Underreaching Transfer Trip (PUTT)", o "Blocking Schemes".
 
-## Conclusiones
+# Algoritmos genéticos
+
+Adicionalmente, se resuelve el problema por medio de algoritmos genéticos haciendo uso de la función distancia existente en los relés de protección en las subestaciones. En este caso se ajustan los valores del alcance resistivo y reactivo de cada una de las zonas de protección. Finalmente, se cuenta con una herramienta online para el ajuste de esta funcionalidad de los relés:
+<https://davidurbaez.github.io/DistanceProtectionTool/>
+
+![image.png](imgs/DistanceFunctionSiemens.PNG)
+
+*Fig. Función de Protección Distancia implementada en los relés Siemens 7SL87.*
+
+![image.png](imgs/DistanceProtectionTool.PNG)
+
+*Fig. Herramienta con optimización de parámetros para el ajuste de la función de protección distancia implementada en los relés Siemens 7SL87.*
 
 ## Trabajo Futuro
 
