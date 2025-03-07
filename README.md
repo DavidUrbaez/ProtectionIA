@@ -228,6 +228,68 @@ Revisando los principales estadísticos de las variables cuantitativas, se obser
 |75%|0.000|7.152300e+01|9.412800e+01|0.860|1.876|80.000|7.500|
 |max|1.000|3.450000e+22|3.458704e+22|1.018|42.765|99.000|10.000|
 
+En cuanto al *target* del trabajo, el 94%  de las fallas se encuentran por fuera de la zona de protección, además, las fallas son uniformes entre cada escenario de despacho.
+
+![image](imgs/bar_char.png)
+
+*Figura 13. Distribución de los datos de las variables de interés*
+
+![image](imgs/x_escenarios.png)
+
+*Figura 14. Distribución de los datos de los escenarios de operación*
+
+Al graficar la relación entre cada par de variables (R, X, V, I) y la variable *inside* se encuentran resultados esperados en la diagonal, donde los valores altos de voltaje y corriente están clasificados dentro de los puntos que caen por fuera de la zona de protección. Adicionalmente, hay una relación entre valores altos de voltaje, un valor mas pequeño de corriente y los puntos que están por fuera de la zona de protección lo que corresponde al fenomeno que se esperaba ver (cuanto mas alejada esta la falla el voltaje las variaciones de coltaje y corriente son menores)
+
+![image](imgs/pair_plot.png)
+
+*Figura 15. Correlación de las variables de interes R, X, V e I*
+
+![image](imgs/jointplot.png)
+
+*Figura 16. Correlación de las variables V e I*
+
+Revisando el histograma de las principales variables de dataset (R, X, V, I) se observa que la mayoría de valores de impedancia se encuentran entre 0 y 1; sin embargo, como se revisó en la descripción del dataset, estas dos variables cuentan con valores atípicos muy altos. Por el lado del voltaje, sus valores están mejor distribuidos pero presentan asimetría negativa (los valores se desvían de la media hacia la derecha) mientras que para la corriente, hay una distribución mas baja de los valores (entre 0 y 5) concentrada totalmente a la izquierda.
+
+![image](imgs/histogram.png)
+
+*Figura 17. Histograma de las variables de interés*
+
+En cuanto al boxplot, la principal observación son los valores atípicos de la impedancia que están muy alejados de los bigotes. En cuanto al voltaje y la corriente, existe una distribución asimétrica de los datos tal como se observa en el histograma; además, el voltaje tiene valores atípicos cercanos a cero por debajo de la mediana mientras que la corriente presenta valores atípicos muy por encima de la mediana.
+
+![image](imgs/boxplot.png)
+
+*Figura 18. Boxplot de las principales variables de interés*
+
+Con el fin de conocer los valores atípicos de la impedancia se utiliza la métrica Z-score que mide la desviación de un dato respecto a la media en términos de desviaciones estándar y se compara con un valor umbral igual a 3. Usando este método se encuentra que son 4 valores atípicos, todos con valores por encima de $3.440000 \times 10^{22}$. Con el fin de mejorar la visualización de los gráficos, estos valores serán eliminados del data set pero serán debidamente tratados en el análisis predictivo.
+
+![image](imgs/boxplot_sin_outliers.png)
+
+*Figura 19. Boxplot de las principales variables de interés sin los datos atípicos*
+
+Al eliminar los valores atípicos de la impedancia se observa una distribución completamente aleatoria alrededor de la media 0. La mayoría de los valores son positivos con variaciones muy grandes. En cuanto al histograma, se observa que la impedancia tiene una distribución de colas livianas y la mayoría de sus valores están alrededor de la media (distribución leptocúrtica). El voltaje se tiene una forma más plana, con la mayoría de los valores concentrados en la cola izquierda mientras que la corriente es la variable que más se aproxima a una distribución normal, con mayor importancia en la cola derecha.
+
+![image](imgs/bar_char_sin_outliers.png)
+
+*Figura 20. Datos sin valores atípicos*
+
+![image](imgs/histogram_sin_outliers.png)
+
+*Figura 21. Distribución de los datos sin valores atípicos*
+
+Finalmente, revisando la correlación entre la variable *target (inside)* y las demás variables explicativas, se observa que las mayores correlaciones se dan con el voltaje y la corriente. En concreto, desconectar la carga tiene una relación positiva con el valor de la corriente y una relación negativa con el voltaje.
+
+|inside|R|X|V|I|
+| ------- | :-------: | :-------: | :-------: | :-------: |
+|inside|1.000|0.004|0.002|-0.330|0.612|
+|R|0.004|1.000|0.120|0.018|-0.007|
+|X|0.002|0.120|1.000|0.036|0.002|
+|V|-0.330|0.018|0.036|1.000|-0.492|
+|I|0.612|-0.007|0.002|-0.492|1.000|
+
+![image](imgs/correlation_matrix.png)
+
+*Figura 22. Matriz de correlación*
+
 ## Metodología
 
 ### Descripción de métricas de desempeño
